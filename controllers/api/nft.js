@@ -12,6 +12,9 @@ class NFTController {
     console.log('nfft', nft);
 
     if (nft && (type === 'avatar' || type === 'item')) {
+      if (type === 'avatar') {
+        nft['glow_color'] = nft.primary_color.replace(')', ', 0.5)').replace('rgb', 'rgba');
+      }
         res.setHeader('Content-Type', 'image/svg+xml');
           res.render(`layouts/${type}`, {
             layout: `${type}.hbs`,
