@@ -3,7 +3,12 @@
 
 <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
  width="{{width}}" height="{{height}}" viewBox="0 0 300 600">
-<g transform="translate(0, 100)" style="filter: drop-shadow(0px 0px 150px {{glow_color}});">
+ 	{{#ifeq glow 'true'}}
+		<g transform="translate(0, 100)" style="filter: drop-shadow(0px 0px 150px {{glow_color}});">
+    {{/ifeq}}
+    {{#ifeq glow 'false'}}
+		<g transform="translate(0, 100)">
+    {{/ifeq}}
 	<style type="text/css">
 	.eye-0{fill:#FAFCD1;}
 	.eye-1{fill: {{eye_color}};}
